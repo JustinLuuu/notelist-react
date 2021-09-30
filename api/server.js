@@ -63,7 +63,7 @@ const notes = [
 
 app.post('/userExist', (req, res) => {
 	const user = users.find(
-		u => u.username === req.body.username &&
+		    u => u.username === req.body.username &&
 			u.password === req.body.password);
 
 	if (user) {
