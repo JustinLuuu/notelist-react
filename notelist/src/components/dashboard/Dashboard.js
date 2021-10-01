@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect, Switch } from "react-router-dom";
-import { FormLayout } from './Forms/FormLayout'
+import { FormNote } from './FormNote'
 import Navbar from './Navbar'
 import NoteList from './NoteList'
 
@@ -13,8 +13,8 @@ export const Dashboard = () => {
             <div>
                 <Switch>
                     <Route exact path="/AllNotes" component={NoteList} />
-                    <Route exact path="/FormNote" component={FormLayout} />
-                    <Route exact path="/FormNote/:noteId" component={FormLayout} />
+                    <Route exact path="/FormNote" component={FormNote} />
+                    <Route exact path="/FormNote/:noteId" component={FormNote} />
 
                     <Redirect to="/AllNotes" />
                 </Switch>

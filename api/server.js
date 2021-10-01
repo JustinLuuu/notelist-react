@@ -89,7 +89,9 @@ app.post('/users', (req, res) => {
 // para las notas
 
 app.get('/notes/:idUser', (req, res) => {
-	const notesUser = notes.filter(n => n.id_user === req.params.idUser);
+	const notesUser = notes.filter(n => n.id_user === req.params.idUser)
+	.map(n => ({id: n.id, text: n.text, date: n.date, time: n.time }));
+
 	res.send(notesUser);
 });
 
@@ -131,6 +133,7 @@ app.patch('/notes/:idNote', (req, res) => {
 		notes[index].text = req.body.text;
 	}
 	const notesUser = notes.filter(n=> n.id_user === idUser);
+	
 	res.send(notesUser);
 });
 

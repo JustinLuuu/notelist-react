@@ -1,4 +1,4 @@
-import store from '../redux/store';
+import store from '../store';
 
 const returnIdUser = () =>{
     const idUser = store.getState().user.info.id;

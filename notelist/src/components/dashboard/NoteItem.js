@@ -14,7 +14,7 @@ export const NoteItem = ({ note }) => {
     }
 
     return (
-        <li className="list-group-item p-3">
+        <li className="list-group-item p-3" key={note.id}>
 
             <div className="bg-primary text-white text-center fw-bold p-2 w-50 m-auto rounded-pill">
                 {note.text}

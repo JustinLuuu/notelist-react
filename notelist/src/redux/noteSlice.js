@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import returnIdUser from "../helpers/returnIdUser";
+import returnIdUser from "./helpers/returnIdUser";
 
 export const getNotesAsync = createAsyncThunk(
     'notes/getNotesAsync',
@@ -32,6 +32,7 @@ export const addNoteAsync = createAsyncThunk(
 export const patchNoteAsync = createAsyncThunk(
     'notes/patchNoteAsync',
     async (payload) => {
+        console.log(payload.idNote);
         const response = await fetch(`http://localhost:7000/notes/${payload.idNote}`, {
             method: 'PATCH',
             headers: {
