@@ -1,1 +1,1 @@
-escribir: "npm run server" en el cmd justo en esta carpeta
+"npm run server" en la terminal justo en este directorio
