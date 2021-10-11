@@ -1,1 +1,0 @@
-escribir: "npm run server" en el cmd justo en esta carpeta
