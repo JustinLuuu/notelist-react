@@ -17,16 +17,14 @@ export const FormNote = ({ history }) => {
         setNote({ ...note, text: e.target.value });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        if (text.length >= 10) {
-                !noteId ?
-                dispatch(addNoteAsync({ text })).then(() => { history.replace('/AllNotes') }) 
-                :
-                dispatch(patchNoteAsync({ idNote: noteId, text })).then(() => { history.replace('/AllNotes') })
+
+        if (text.length >= 10) {           
+            !noteId ? await dispatch(addNoteAsync({ text })) : await dispatch(patchNoteAsync({ idNote: noteId, text }));
+            history.replace('/AllNotes');
         }
-        else{
+        else {
             alert('Para añadir una nota debe tener al menos 10 caracteres !')
         }
     }
